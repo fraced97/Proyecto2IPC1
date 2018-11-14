@@ -14,8 +14,24 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     /**
      * Creates new form ModificarEstudiante
      */
+    NodoEstudiante aux;
+
     public ModificarEstudiante() {
         initComponents();
+
+        //Bloquear TextField
+        bdpi.setEditable(false);
+        bcontra.setEditable(false);
+        
+        //////////////////////////MOSTRAR CARNET EN COMBOBOX///////////////////////////////////////////
+        aux = Proyecto2IPC1.estudiante.primero;
+        do {
+            jComboBox1.addItem(aux.carnet);
+            aux = aux.siguiente;
+        } while (aux != Proyecto2IPC1.estudiante.primero);
+        
+        /////////////////////////////////////////////////////////////////////
+
     }
 
     /**
@@ -37,16 +53,17 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bdpi = new javax.swing.JTextField();
+        bnombre = new javax.swing.JTextField();
+        bapellido = new javax.swing.JTextField();
+        bdireccion = new javax.swing.JTextField();
+        bcreditos = new javax.swing.JTextField();
+        bcontra = new javax.swing.JTextField();
+        bcorreo = new javax.swing.JTextField();
+        bmodificar = new javax.swing.JButton();
+        bsalir = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        bobtener = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,36 +106,46 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         jLabel9.setText("Correo");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(270, 240, 70, 20);
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(80, 140, 160, 30);
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(80, 190, 160, 30);
-        jPanel1.add(jTextField4);
-        jTextField4.setBounds(80, 240, 160, 30);
-        jPanel1.add(jTextField5);
-        jTextField5.setBounds(340, 90, 170, 30);
-        jPanel1.add(jTextField6);
-        jTextField6.setBounds(340, 140, 170, 30);
-        jPanel1.add(jTextField7);
-        jTextField7.setBounds(340, 190, 170, 30);
+        jPanel1.add(bdpi);
+        bdpi.setBounds(80, 140, 160, 30);
+        jPanel1.add(bnombre);
+        bnombre.setBounds(80, 190, 160, 30);
+        jPanel1.add(bapellido);
+        bapellido.setBounds(80, 240, 160, 30);
+        jPanel1.add(bdireccion);
+        bdireccion.setBounds(340, 90, 170, 30);
+        jPanel1.add(bcreditos);
+        bcreditos.setBounds(340, 140, 170, 30);
+        jPanel1.add(bcontra);
+        bcontra.setBounds(340, 190, 170, 30);
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        bcorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                bcorreoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField8);
-        jTextField8.setBounds(340, 240, 170, 30);
+        jPanel1.add(bcorreo);
+        bcorreo.setBounds(340, 240, 170, 30);
 
-        jButton1.setBackground(new java.awt.Color(51, 255, 0));
-        jButton1.setText("Modificar");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(90, 300, 150, 50);
+        bmodificar.setBackground(new java.awt.Color(51, 255, 0));
+        bmodificar.setText("Modificar");
+        bmodificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bmodificarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bmodificar);
+        bmodificar.setBounds(220, 300, 110, 50);
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Salir");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(330, 300, 150, 50);
+        bsalir.setBackground(new java.awt.Color(255, 0, 0));
+        bsalir.setText("Salir");
+        bsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bsalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bsalir);
+        bsalir.setBounds(390, 300, 100, 50);
 
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,27 +155,68 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(80, 90, 160, 30);
 
+        bobtener.setText("Obtener");
+        bobtener.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bobtenerActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bobtener);
+        bobtener.setBounds(60, 300, 110, 50);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void bcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_bcorreoActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void bobtenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bobtenerActionPerformed
+        // TODO add your handling code here:
+        
+        aux = Proyecto2IPC1.estudiante.primero;
+        do {
+            if(jComboBox1.getSelectedItem()==aux.carnet){
+                bdpi.setText(aux.dpi);
+                bapellido.setText(aux.Apellido);
+                bnombre.setText(aux.Nombre);
+                bdireccion.setText(aux.direccion);
+                bcreditos.setText(aux.credito);
+                bcontra.setText(aux.contrasena);
+                bcorreo.setText(aux.correo);
+            }
+            aux = aux.siguiente;
+        } while (aux != Proyecto2IPC1.estudiante.primero);
+        
+    }//GEN-LAST:event_bobtenerActionPerformed
+
+    private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsalirActionPerformed
+        // TODO add your handling code here:
+        AdministrarEstudiantes administrador = new AdministrarEstudiantes();
+        administrador.setVisible(true);
+        ModificarEstudiante.this.dispose();
+    }//GEN-LAST:event_bsalirActionPerformed
+
+    private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_bmodificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,8 +254,16 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public static javax.swing.JTextField bapellido;
+    private javax.swing.JTextField bcontra;
+    public static javax.swing.JTextField bcorreo;
+    private javax.swing.JTextField bcreditos;
+    public static javax.swing.JTextField bdireccion;
+    private javax.swing.JTextField bdpi;
+    private javax.swing.JButton bmodificar;
+    public static javax.swing.JTextField bnombre;
+    private javax.swing.JButton bobtener;
+    private javax.swing.JButton bsalir;
     public static javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -199,12 +275,5 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JTextField jTextField2;
-    public static javax.swing.JTextField jTextField3;
-    public static javax.swing.JTextField jTextField4;
-    public static javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    public static javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }

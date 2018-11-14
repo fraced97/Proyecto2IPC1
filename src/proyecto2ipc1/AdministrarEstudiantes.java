@@ -54,6 +54,11 @@ public class AdministrarEstudiantes extends javax.swing.JFrame {
 
         bmodificar.setBackground(new java.awt.Color(204, 204, 0));
         bmodificar.setText("Modificar");
+        bmodificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bmodificarActionPerformed(evt);
+            }
+        });
         jPanel1.add(bmodificar);
         bmodificar.setBounds(270, 90, 110, 40);
 
@@ -101,6 +106,13 @@ public class AdministrarEstudiantes extends javax.swing.JFrame {
         estudiante.setVisible(true);
         AdministrarEstudiantes.this.dispose();
     }//GEN-LAST:event_bagregarActionPerformed
+
+    private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
+        // TODO add your handling code here:
+        ModificarEstudiante modificar = new ModificarEstudiante();
+        modificar.setVisible(true);
+        AdministrarEstudiantes.this.dispose();
+    }//GEN-LAST:event_bmodificarActionPerformed
 
     /**
      * @param args the command line arguments

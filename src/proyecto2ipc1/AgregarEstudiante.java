@@ -19,26 +19,18 @@ public class AgregarEstudiante extends javax.swing.JFrame {
     public AgregarEstudiante() {
         initComponents();
         setLocationRelativeTo(null);
-        
-        
-        
+
         //Generar Numero Random Para contrasena
         txtcontra.setText(String.valueOf(random()));
         txtcontra.setEditable(false);
-        
-        
-        
+
     }
-    
-    
-    
+
     public int random() {
 
         int numero;
-        
 
-        numero = (int)(Math.random()*(151-50)+50);
-        
+        numero = (int) (Math.random() * (151 - 50) + 50);
 
         return numero;
 
@@ -194,37 +186,61 @@ public class AgregarEstudiante extends javax.swing.JFrame {
 
     private void txtcontraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontraActionPerformed
         // TODO add your handling code here:
-       
-        
+
+
     }//GEN-LAST:event_txtcontraActionPerformed
 
     private void bagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bagregarActionPerformed
         // TODO add your handling code here:
         String apellido = txtapellido.getText();
-        String nombre= txtnombre.getText();
-        String correo= txtcorreo.getText();
-        String direccion= txtdireccion.getText();
+        String nombre = txtnombre.getText();
+        String correo = txtcorreo.getText();
+        String direccion = txtdireccion.getText();
         String dpi = txtdpi.getText();
-        String carnet=txtcarnet.getText();
-        String contrasena = txtcontra.getText();
+        String carnet = txtcarnet.getText();
+        String contra = txtcontra.getText();
         String credito = txtcredito.getText();
-        
-        
-        
-        if(apellido.length()!=0&&nombre.length()!=0&&correo.length()!=0&&direccion.length()!=0&&
-                dpi.length()!=0&&carnet.length()!=0){
-                 Proyecto2IPC1.estudiante.IngresarEstudiante(carnet, dpi, nombre, apellido, correo, direccion, credito, contrasena);
-                 txtcontra.setText(String.valueOf(random()));
-                 
-                 
-                 JOptionPane.showMessageDialog(null,"Se ha ingresado con Exito","Confirmacion",1);
-        }else{
-            JOptionPane.showMessageDialog(null,"No ha ingresado todos los datos","Error",1);
+
+        if (apellido.length() != 0 && nombre.length() != 0 && correo.length() != 0 && direccion.length() != 0
+                && dpi.length() != 0 && carnet.length() != 0) {
+
+            if (Proyecto2IPC1.estudiante.CDPIExiste()) {
+                Proyecto2IPC1.estudiante.IngresarEstudiante(carnet, dpi, nombre, apellido, correo, direccion, credito,carnet+contra);
+                
+                txtcontra.setText(String.valueOf(random()));
+
+                txtapellido.setText(null);
+                txtnombre.setText(null);
+                txtcorreo.setText(null);
+                txtdireccion.setText(null);
+                txtdpi.setText(null);
+                txtcarnet.setText(null);
+                txtcredito.setText(null);
+                JOptionPane.showMessageDialog(null, "Se ha ingresado con Exito", "Confirmacion", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, "Carnet/Dpi ya existente", "Error", 1);
+            }
+
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "No ha ingresado todos los datos", "Error", 1);
         }
+
+        /*txtapellido.setText(null);
+        txtnombre.setText(null);
+        txtcorreo.setText(null);
+        txtdireccion.setText(null);
+        txtdpi.setText(null);
+        txtcarnet.setText(null);
+        txtcredito.setText(null);*/
+
     }//GEN-LAST:event_bagregarActionPerformed
 
     private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsalirActionPerformed
         // TODO add your handling code here:
+        AdministrarEstudiantes administrador = new AdministrarEstudiantes();
+        administrador.setVisible(true);
+        AgregarEstudiante.this.dispose();
         Proyecto2IPC1.estudiante.MostrarEstudiantes();
     }//GEN-LAST:event_bsalirActionPerformed
 
@@ -276,13 +292,13 @@ public class AgregarEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JTextField txtapellido;
-    private javax.swing.JTextField txtcarnet;
+    private javax.swing.JTextField txtapellido;
+    public static javax.swing.JTextField txtcarnet;
     private javax.swing.JTextField txtcontra;
-    public static javax.swing.JTextField txtcorreo;
+    private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtcredito;
-    public static javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txtdpi;
-    public static javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtdireccion;
+    public static javax.swing.JTextField txtdpi;
+    private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }

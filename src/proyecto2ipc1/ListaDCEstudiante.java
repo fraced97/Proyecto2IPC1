@@ -5,10 +5,12 @@ package proyecto2ipc1;
 public class ListaDCEstudiante {
     NodoEstudiante primero;
     NodoEstudiante ultimo;
+    static int contador;
     
     public ListaDCEstudiante(){
         primero = null;
         ultimo=null;
+        contador=0;
     }
     
     public void IngresarEstudiante(String carnet,String dpi,String Nombre, String Apellido,String correo,String direccion,String credito,String contrasena){
@@ -20,12 +22,14 @@ public class ListaDCEstudiante {
         nuevo.correo=correo;
         nuevo.direccion=direccion;
         nuevo.credito=credito;
+        nuevo.contrasena=contrasena;
         
         if(primero==null){
             primero=nuevo;
             primero.siguiente=primero;
             nuevo.anterior=ultimo; 
             ultimo=nuevo;
+            contador++;
             
         }else{
         ultimo.siguiente=nuevo;
@@ -33,6 +37,7 @@ public class ListaDCEstudiante {
         nuevo.anterior=ultimo;
         ultimo=nuevo;
         primero.anterior=ultimo;
+        contador++;
     }
         
     }
@@ -42,7 +47,7 @@ public class ListaDCEstudiante {
         actual=primero;
         do{
             //agregar en una tabla
-            System.out.println(actual.carnet+" ---  "+actual.Nombre);
+            System.out.println(actual.carnet+"  ---  "+actual.Nombre+"  ---   "+actual.contrasena);
             actual=actual.siguiente;
         }while(actual!=primero);
             
@@ -62,5 +67,27 @@ public class ListaDCEstudiante {
             }
             posicion=posicion.siguiente;
         }while(posicion!=primero);
+    }
+    
+    public boolean CDPIExiste(){
+        boolean condicion = true;
+        NodoEstudiante aux = new NodoEstudiante();
+        aux=primero;
+        
+        if(aux==null){
+            condicion=true;
+        }else{
+             do{
+            if(AgregarEstudiante.txtcarnet.getText().equals(aux.carnet)
+                    ||AgregarEstudiante.txtdpi.getText().equals(aux.dpi)){
+                
+                condicion=false;
+            }
+            aux=aux.siguiente;
+        }while(aux!=primero);
+        }
+       
+        
+        return condicion;
     }
 }
