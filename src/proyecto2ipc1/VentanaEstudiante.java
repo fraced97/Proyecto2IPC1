@@ -9,12 +9,13 @@ package proyecto2ipc1;
  *
  * @author USUARIO
  */
-public class Administrador extends javax.swing.JFrame {
+public class VentanaEstudiante extends javax.swing.JFrame {
 
     /**
-     * Creates new form Administrador
+     * Creates new form VentanaEstudiante
      */
-    public Administrador() {
+    public VentanaEstudiante(String title) {
+        super(title);
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -29,36 +30,25 @@ public class Administrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        bestudiantes = new javax.swing.JButton();
-        bcursos = new javax.swing.JButton();
-        breportes = new javax.swing.JButton();
+        basignar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         bsalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setLayout(null);
 
-        bestudiantes.setBackground(new java.awt.Color(0, 204, 255));
-        bestudiantes.setText("Administrar Estuadiantes");
-        bestudiantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bestudiantesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bestudiantes);
-        bestudiantes.setBounds(60, 120, 190, 50);
+        basignar.setBackground(new java.awt.Color(255, 153, 0));
+        basignar.setText("Asignar Cursos");
+        jPanel1.add(basignar);
+        basignar.setBounds(80, 100, 140, 50);
 
-        bcursos.setBackground(new java.awt.Color(255, 153, 0));
-        bcursos.setText("Administa Cursos");
-        jPanel1.add(bcursos);
-        bcursos.setBounds(300, 120, 170, 50);
-
-        breportes.setBackground(new java.awt.Color(255, 102, 102));
-        breportes.setText("Reportes");
-        jPanel1.add(breportes);
-        breportes.setBounds(90, 230, 120, 50);
+        jButton2.setBackground(new java.awt.Color(102, 204, 0));
+        jButton2.setText("Cursos Aprobados");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(280, 100, 150, 50);
 
         bsalir.setBackground(new java.awt.Color(255, 0, 0));
         bsalir.setText("Salir");
@@ -68,37 +58,31 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bsalir);
-        bsalir.setBounds(310, 230, 130, 50);
+        bsalir.setBounds(190, 190, 150, 50);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Administrador");
+        jLabel1.setText("Bienvenido Estudiante");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(150, 30, 240, 40);
+        jLabel1.setBounds(80, 10, 350, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bestudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestudiantesActionPerformed
-        // TODO add your handling code here:
-        new AdministrarEstudiantes().setVisible(true);
-        Administrador.this.dispose();
-    }//GEN-LAST:event_bestudiantesActionPerformed
-
     private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsalirActionPerformed
         // TODO add your handling code here:
-        new MenuPrincipal("Menu").setVisible(true);
-        Administrador.this.dispose();
+        new Login().setVisible(true);
+        VentanaEstudiante.this.dispose();
     }//GEN-LAST:event_bsalirActionPerformed
 
     /**
@@ -118,29 +102,28 @@ public class Administrador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Administrador().setVisible(true);
+                new VentanaEstudiante("").setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bcursos;
-    private javax.swing.JButton bestudiantes;
-    private javax.swing.JButton breportes;
+    private javax.swing.JButton basignar;
     private javax.swing.JButton bsalir;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

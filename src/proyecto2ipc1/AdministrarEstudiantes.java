@@ -64,6 +64,11 @@ public class AdministrarEstudiantes extends javax.swing.JFrame {
 
         bmostrar.setBackground(new java.awt.Color(204, 0, 204));
         bmostrar.setText("Mostrar");
+        bmostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bmostrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(bmostrar);
         bmostrar.setBounds(60, 160, 110, 40);
 
@@ -87,7 +92,13 @@ public class AdministrarEstudiantes extends javax.swing.JFrame {
         jPanel1.add(bcargamasiva);
         bcargamasiva.setBounds(60, 240, 120, 40);
 
+        bsalir.setBackground(new java.awt.Color(255, 0, 0));
         bsalir.setText("Salir");
+        bsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bsalirActionPerformed(evt);
+            }
+        });
         jPanel1.add(bsalir);
         bsalir.setBounds(270, 240, 110, 40);
 
@@ -124,6 +135,18 @@ public class AdministrarEstudiantes extends javax.swing.JFrame {
         new EliminarEstudiante().setVisible(true);
         AdministrarEstudiantes.this.dispose();
     }//GEN-LAST:event_beliminarActionPerformed
+
+    private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsalirActionPerformed
+        // TODO add your handling code here:
+        new Administrador().setVisible(true);
+        AdministrarEstudiantes.this.dispose();
+    }//GEN-LAST:event_bsalirActionPerformed
+
+    private void bmostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmostrarActionPerformed
+        // TODO add your handling code here:
+       new MostrarEstudiante().setVisible(true);
+       AdministrarEstudiantes.this.dispose();
+    }//GEN-LAST:event_bmostrarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -17,12 +17,10 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
-        
+
         initComponents();
         setLocationRelativeTo(null);
-        
-        
-        
+
     }
 
     /**
@@ -72,6 +70,11 @@ public class Login extends javax.swing.JFrame {
 
         bcancelar.setBackground(new java.awt.Color(204, 255, 0));
         bcancelar.setText("Cancelar");
+        bcancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bcancelarActionPerformed(evt);
+            }
+        });
         jPanel1.add(bcancelar);
         bcancelar.setBounds(290, 260, 130, 50);
 
@@ -98,26 +101,48 @@ public class Login extends javax.swing.JFrame {
 
     private void bingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingresarActionPerformed
         // TODO add your handling code here:
-        
-         String xusuario = txtusuario.getText();
-         String xpassword = txtcontra.getText();
-         
-         if(xusuario.equalsIgnoreCase("201700350")&&xpassword.equalsIgnoreCase("201700350")){
-             Administrador administrador = new Administrador();
-             administrador.setVisible(true);
-             Login.this.dispose();
-             
-             
-         }else if(!xusuario.equalsIgnoreCase("201700350")&&xpassword.equalsIgnoreCase("201700350")){
-             JOptionPane.showMessageDialog(null,"<html> Usuario Incorrecto <html>","Error",JOptionPane.ERROR_MESSAGE);
-             
-         }else if(xusuario.equalsIgnoreCase("201700350")&&!xpassword.equalsIgnoreCase("201700350")){
-             JOptionPane.showMessageDialog(null,"<html> Contraseña incorrecta <html>","Error",JOptionPane.ERROR_MESSAGE);
-         }else if (xusuario.isEmpty()&&xpassword.isEmpty()){
-             JOptionPane.showMessageDialog(null,"Ingrese Usuario y Contraseña","Error",1);
-         
-         }
+
+        String xusuario = txtusuario.getText();
+        String xpassword = txtcontra.getText();
+
+        if (xusuario.equalsIgnoreCase("201700350") && xpassword.equalsIgnoreCase("201700350")) {
+            Administrador administrador = new Administrador();
+            administrador.setVisible(true);
+            Login.this.dispose();
+
+        } else if (!xusuario.equalsIgnoreCase("201700350") && xpassword.equalsIgnoreCase("201700350")) {
+            JOptionPane.showMessageDialog(null, "<html> Usuario Incorrecto <html>", "Error", JOptionPane.ERROR_MESSAGE);
+
+        } else if (xusuario.equalsIgnoreCase("201700350") && !xpassword.equalsIgnoreCase("201700350")) {
+            JOptionPane.showMessageDialog(null, "<html> Contraseña incorrecta <html>", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (xusuario.isEmpty() && xpassword.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese Usuario y Contraseña", "Error", 1);
+
+        } else {
+            NodoEstudiante aux;
+            aux = Proyecto2IPC1.estudiante.primero;
+            do {
+
+                if (xusuario.equals(aux.carnet) && xpassword.equals(aux.contrasena)) {
+                    new VentanaEstudiante(String.format("USAC | %s",aux.Nombre+" "+ aux.Apellido+"---"+aux.carnet)).setVisible(true);
+                    Login.this.dispose();
+                } else if (xusuario.equals(aux.carnet) && !xpassword.equals(aux.contrasena)) {
+                    JOptionPane.showMessageDialog(null, "<html> Contraseña incorrecta <html>", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!xusuario.equals(aux.carnet) && xpassword.equals(aux.contrasena)) {
+                    JOptionPane.showMessageDialog(null, "<html> Usuario Incorrecto <html>", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+                aux = aux.siguiente;
+            } while (aux != Proyecto2IPC1.estudiante.primero);
+
+        }
     }//GEN-LAST:event_bingresarActionPerformed
+
+    private void bcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcancelarActionPerformed
+        // TODO add your handling code here:
+        new MenuPrincipal("Menu").setVisible(true);
+        Login.this.dispose();
+    }//GEN-LAST:event_bcancelarActionPerformed
 
     /**
      * @param args the command line arguments
