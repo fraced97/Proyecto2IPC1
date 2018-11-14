@@ -19,6 +19,9 @@ public class Proyecto2IPC1 {
     public static ListaDCEstudiante estudiante = new ListaDCEstudiante();
     public static void main(String[] args) {
         // TODO code application logic here
+        MenuPrincipal menu = new MenuPrincipal("Menu");
+        menu.setVisible(true);
+       // new MenuPrincipal("Menu").setVisible(true);
     }
     
 }

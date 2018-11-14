@@ -69,6 +69,11 @@ public class AdministrarEstudiantes extends javax.swing.JFrame {
 
         beliminar.setBackground(new java.awt.Color(255, 102, 0));
         beliminar.setText("Eliminar");
+        beliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beliminarActionPerformed(evt);
+            }
+        });
         jPanel1.add(beliminar);
         beliminar.setBounds(270, 160, 110, 40);
 
@@ -113,6 +118,12 @@ public class AdministrarEstudiantes extends javax.swing.JFrame {
         modificar.setVisible(true);
         AdministrarEstudiantes.this.dispose();
     }//GEN-LAST:event_bmodificarActionPerformed
+
+    private void beliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliminarActionPerformed
+        // TODO add your handling code here:
+        new EliminarEstudiante().setVisible(true);
+        AdministrarEstudiantes.this.dispose();
+    }//GEN-LAST:event_beliminarActionPerformed
 
     /**
      * @param args the command line arguments

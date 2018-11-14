@@ -5,6 +5,8 @@
  */
 package proyecto2ipc1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USUARIO
@@ -14,16 +16,18 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     /**
      * Creates new form ModificarEstudiante
      */
-    NodoEstudiante aux;
+    
 
     public ModificarEstudiante() {
         initComponents();
-
+        setLocationRelativeTo(null);
+        
         //Bloquear TextField
         bdpi.setEditable(false);
         bcontra.setEditable(false);
         
         //////////////////////////MOSTRAR CARNET EN COMBOBOX///////////////////////////////////////////
+        NodoEstudiante aux;
         aux = Proyecto2IPC1.estudiante.primero;
         do {
             jComboBox1.addItem(aux.carnet);
@@ -155,6 +159,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(80, 90, 160, 30);
 
+        bobtener.setBackground(new java.awt.Color(51, 255, 204));
         bobtener.setText("Obtener");
         bobtener.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,7 +193,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
 
     private void bobtenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bobtenerActionPerformed
         // TODO add your handling code here:
-        
+        NodoEstudiante aux;
         aux = Proyecto2IPC1.estudiante.primero;
         do {
             if(jComboBox1.getSelectedItem()==aux.carnet){
@@ -214,7 +219,19 @@ public class ModificarEstudiante extends javax.swing.JFrame {
 
     private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
         // TODO add your handling code here:
-        
+        NodoEstudiante aux;
+        aux = Proyecto2IPC1.estudiante.primero;
+        do {
+            if(jComboBox1.getSelectedItem()==aux.carnet){
+                aux.Apellido=bapellido.getText();
+                aux.Nombre=bnombre.getText();
+                aux.direccion=bdireccion.getText();
+                aux.correo = bcorreo.getText();
+                aux.credito=bcreditos.getText();
+                JOptionPane.showMessageDialog(null, "Se ha realizado los Cambios con Exito", "Cambios", 1);
+            }
+            aux = aux.siguiente;
+        } while (aux != Proyecto2IPC1.estudiante.primero);
         
     }//GEN-LAST:event_bmodificarActionPerformed
 
@@ -254,14 +271,14 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTextField bapellido;
+    private javax.swing.JTextField bapellido;
     private javax.swing.JTextField bcontra;
-    public static javax.swing.JTextField bcorreo;
+    private javax.swing.JTextField bcorreo;
     private javax.swing.JTextField bcreditos;
-    public static javax.swing.JTextField bdireccion;
+    private javax.swing.JTextField bdireccion;
     private javax.swing.JTextField bdpi;
     private javax.swing.JButton bmodificar;
-    public static javax.swing.JTextField bnombre;
+    private javax.swing.JTextField bnombre;
     private javax.swing.JButton bobtener;
     private javax.swing.JButton bsalir;
     public static javax.swing.JComboBox<String> jComboBox1;

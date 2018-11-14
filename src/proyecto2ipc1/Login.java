@@ -102,7 +102,7 @@ public class Login extends javax.swing.JFrame {
          String xusuario = txtusuario.getText();
          String xpassword = txtcontra.getText();
          
-         if(xusuario.equalsIgnoreCase("admin")&&xpassword.equalsIgnoreCase("admin")){
+         if(xusuario.equalsIgnoreCase("201700350")&&xpassword.equalsIgnoreCase("201700350")){
              Administrador administrador = new Administrador();
              administrador.setVisible(true);
              Login.this.dispose();

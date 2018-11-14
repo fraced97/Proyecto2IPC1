@@ -55,10 +55,19 @@ public class ListaDCEstudiante {
     }
     
     public void EliminarEstudiante(){
+        NodoEstudiante primera_posicion = new NodoEstudiante();
+        NodoEstudiante anterior = new NodoEstudiante();
+        primera_posicion=primero;
+        anterior=ultimo;
+        do{
+            anterior=primera_posicion;
+            primera_posicion=primera_posicion.siguiente;
+        }while(primera_posicion!=primero);
+        
         
     }
     
-    public void ModificarEstudiante(String c){
+    /*public void ModificarEstudiante(String c){
         NodoEstudiante posicion = new NodoEstudiante();
         posicion=primero;
         do{
@@ -67,7 +76,7 @@ public class ListaDCEstudiante {
             }
             posicion=posicion.siguiente;
         }while(posicion!=primero);
-    }
+    }*/
     
     public boolean CDPIExiste(){
         boolean condicion = true;

@@ -86,6 +86,8 @@ public class Administrador extends javax.swing.JFrame {
 
     private void bestudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestudiantesActionPerformed
         // TODO add your handling code here:
+        new AdministrarEstudiantes().setVisible(true);
+        Administrador.this.dispose();
     }//GEN-LAST:event_bestudiantesActionPerformed
 
     /**
