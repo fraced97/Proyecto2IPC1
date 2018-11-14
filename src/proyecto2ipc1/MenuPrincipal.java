@@ -7,6 +7,7 @@ package proyecto2ipc1;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -66,6 +67,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         botonAbout.setBackground(new java.awt.Color(255, 153, 0));
         botonAbout.setText("About");
+        botonAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAboutActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonAbout);
         botonAbout.setBounds(50, 310, 140, 50);
 
@@ -93,7 +99,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void botonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonloginActionPerformed
         // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        MenuPrincipal.this.dispose();
     }//GEN-LAST:event_botonloginActionPerformed
+
+    private void botonAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAboutActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"<html>Fredy Estuardo Ramírez Moscoso "
+                + "201700350<hmtl>","Informacion",1);
+    }//GEN-LAST:event_botonAboutActionPerformed
 
     /**
      * @param args the command line arguments

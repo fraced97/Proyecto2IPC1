@@ -37,8 +37,10 @@ public class Administrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(102, 204, 0));
         jPanel1.setLayout(null);
 
+        bestudiantes.setBackground(new java.awt.Color(0, 204, 255));
         bestudiantes.setText("Administrar Estuadiantes");
         bestudiantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,22 +50,25 @@ public class Administrador extends javax.swing.JFrame {
         jPanel1.add(bestudiantes);
         bestudiantes.setBounds(60, 120, 190, 50);
 
+        bcursos.setBackground(new java.awt.Color(255, 153, 0));
         bcursos.setText("Administa Cursos");
         jPanel1.add(bcursos);
         bcursos.setBounds(300, 120, 170, 50);
 
+        breportes.setBackground(new java.awt.Color(255, 102, 102));
         breportes.setText("Reportes");
         jPanel1.add(breportes);
         breportes.setBounds(90, 230, 120, 50);
 
+        bsalir.setBackground(new java.awt.Color(255, 0, 0));
         bsalir.setText("Salir");
         jPanel1.add(bsalir);
         bsalir.setBounds(310, 230, 130, 50);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Administrador");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(190, 30, 240, 40);
+        jLabel1.setBounds(150, 30, 240, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

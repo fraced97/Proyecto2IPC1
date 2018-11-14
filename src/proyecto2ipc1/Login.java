@@ -108,13 +108,14 @@ public class Login extends javax.swing.JFrame {
              Login.this.dispose();
              
              
-         }else if(!xusuario.equalsIgnoreCase("admin")&&xpassword.equalsIgnoreCase("admin")){
+         }else if(!xusuario.equalsIgnoreCase("201700350")&&xpassword.equalsIgnoreCase("201700350")){
              JOptionPane.showMessageDialog(null,"<html> Usuario Incorrecto <html>","Error",JOptionPane.ERROR_MESSAGE);
              
-         }else if(xusuario.equalsIgnoreCase("admin")&&!xpassword.equalsIgnoreCase("admin")){
-             JOptionPane.showMessageDialog(null,"<html> Cpntraseña incorrecta <html>","Error",JOptionPane.ERROR_MESSAGE);
+         }else if(xusuario.equalsIgnoreCase("201700350")&&!xpassword.equalsIgnoreCase("201700350")){
+             JOptionPane.showMessageDialog(null,"<html> Contraseña incorrecta <html>","Error",JOptionPane.ERROR_MESSAGE);
          }else if (xusuario.isEmpty()&&xpassword.isEmpty()){
              JOptionPane.showMessageDialog(null,"Ingrese Usuario y Contraseña","Error",1);
+         
          }
     }//GEN-LAST:event_bingresarActionPerformed
 

@@ -9,11 +9,14 @@ package proyecto2ipc1;
  *
  * @author USUARIO
  */
+
 public class Proyecto2IPC1 {
 
     /**
      * @param args the command line arguments
      */
+   
+    public static ListaDCEstudiante estudiante = new ListaDCEstudiante();
     public static void main(String[] args) {
         // TODO code application logic here
     }
