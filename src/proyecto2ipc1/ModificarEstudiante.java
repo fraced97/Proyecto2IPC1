@@ -198,7 +198,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         do {
             if(jComboBox1.getSelectedItem()==aux.carnet){
                 bdpi.setText(aux.dpi);
-                bapellido.setText(aux.Apellido);
+                //bapellido.setText(aux.Apellido);
                 bnombre.setText(aux.Nombre);
                 bdireccion.setText(aux.direccion);
                 bcreditos.setText(aux.credito);
@@ -223,7 +223,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         aux = Proyecto2IPC1.estudiante.primero;
         do {
             if(jComboBox1.getSelectedItem()==aux.carnet){
-                aux.Apellido=bapellido.getText();
+                //aux.Apellido=bapellido.getText();
                 aux.Nombre=bnombre.getText();
                 aux.direccion=bdireccion.getText();
                 aux.correo = bcorreo.getText();

@@ -205,7 +205,7 @@ public class AgregarEstudiante extends javax.swing.JFrame {
                 && dpi.length() != 0 && carnet.length() != 0) {
 
             if (Proyecto2IPC1.estudiante.CDPIExiste()) {
-                Proyecto2IPC1.estudiante.IngresarEstudiante(carnet, dpi, nombre, apellido, correo, direccion, credito,carnet+contra);
+                Proyecto2IPC1.estudiante.IngresarEstudiante(carnet, dpi, nombre+" "+apellido, correo, direccion, credito,carnet+contra);
                 
                 txtcontra.setText(String.valueOf(random()));
 

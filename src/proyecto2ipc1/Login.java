@@ -124,7 +124,7 @@ public class Login extends javax.swing.JFrame {
             do {
 
                 if (xusuario.equals(aux.carnet) && xpassword.equals(aux.contrasena)) {
-                    new VentanaEstudiante(String.format("USAC | %s",aux.Nombre+" "+ aux.Apellido+"---"+aux.carnet)).setVisible(true);
+                    new VentanaEstudiante(String.format("USAC | %s",aux.Nombre+"---"+aux.carnet)).setVisible(true);
                     Login.this.dispose();
                 } else if (xusuario.equals(aux.carnet) && !xpassword.equals(aux.contrasena)) {
                     JOptionPane.showMessageDialog(null, "<html> Contraseña incorrecta <html>", "Error", JOptionPane.ERROR_MESSAGE);

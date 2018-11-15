@@ -13,12 +13,12 @@ public class ListaDCEstudiante {
         contador=0;
     }
     
-    public void IngresarEstudiante(String carnet,String dpi,String Nombre, String Apellido,String correo,String direccion,String credito,String contrasena){
+    public void IngresarEstudiante(String carnet,String dpi,String Nombre,String correo,String direccion,String credito,String contrasena){
         NodoEstudiante nuevo = new NodoEstudiante();
         nuevo.carnet=carnet;
         nuevo.dpi=dpi;
         nuevo.Nombre=Nombre;
-        nuevo.Apellido=Apellido;
+        //nuevo.Apellido=Apellido;
         nuevo.correo=correo;
         nuevo.direccion=direccion;
         nuevo.credito=credito;
@@ -54,7 +54,7 @@ public class ListaDCEstudiante {
     
     }
     
-    public void EliminarEstudiante(){
+    /*public void EliminarEstudiante(){
         NodoEstudiante primera_posicion = new NodoEstudiante();
         NodoEstudiante anterior = new NodoEstudiante();
         primera_posicion=primero;
@@ -65,7 +65,7 @@ public class ListaDCEstudiante {
         }while(primera_posicion!=primero);
         
         
-    }
+    }*/
     
     /*public void ModificarEstudiante(String c){
         NodoEstudiante posicion = new NodoEstudiante();

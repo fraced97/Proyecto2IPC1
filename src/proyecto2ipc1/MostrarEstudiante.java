@@ -45,7 +45,7 @@ public class MostrarEstudiante extends JFrame {
         tablamostrarusuario2.addColumn("Carnet");
         tablamostrarusuario2.addColumn("Dpi");
         tablamostrarusuario2.addColumn("Nombre");
-        tablamostrarusuario2.addColumn("Apellido");
+        //tablamostrarusuario2.addColumn("Apellido");
         tablamostrarusuario2.addColumn("Correo");
         tablamostrarusuario2.addColumn("Direccion");
         tablamostrarusuario2.addColumn("Creditos");
@@ -76,7 +76,7 @@ public class MostrarEstudiante extends JFrame {
         actual = Proyecto2IPC1.estudiante.primero;
         do {
 
-            String mostrar[] = {actual.carnet, actual.dpi, actual.Nombre, actual.Apellido, actual.correo,
+            String mostrar[] = {actual.carnet, actual.dpi, actual.Nombre , actual.correo,
                 actual.direccion, actual.credito, actual.contrasena};
             tablamostrarusuario2.addRow(mostrar);
             actual = actual.siguiente;

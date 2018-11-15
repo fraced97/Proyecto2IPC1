@@ -216,7 +216,7 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         do {
             if(jComboBox1.getSelectedItem()==aux.carnet){
                 txtdpi.setText(aux.dpi);
-                txtapellido.setText(aux.Apellido);
+                //txtapellido.setText(aux.Apellido);
                 txtnombre.setText(aux.Nombre);
                 txtdireccion.setText(aux.direccion);
                 txtcredito.setText(aux.credito);

@@ -6,7 +6,7 @@ public class NodoEstudiante {
     String carnet;
     String dpi;
     String Nombre;
-    String Apellido;
+    //String Apellido;
     String correo;
     String direccion;
     String credito;
