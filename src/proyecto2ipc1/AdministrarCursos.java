@@ -69,6 +69,11 @@ public class AdministrarCursos extends javax.swing.JFrame {
 
         bcarga.setBackground(new java.awt.Color(153, 255, 255));
         bcarga.setText("Carga Masiva");
+        bcarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bcargaActionPerformed(evt);
+            }
+        });
         jPanel1.add(bcarga);
         bcarga.setBounds(80, 270, 120, 60);
 
@@ -145,6 +150,12 @@ public class AdministrarCursos extends javax.swing.JFrame {
         new EliminarCurso().setVisible(true);
         AdministrarCursos.this.dispose();
     }//GEN-LAST:event_beliminarActionPerformed
+
+    private void bcargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcargaActionPerformed
+        // TODO add your handling code here:
+        new CargaMasivaCurso().setVisible(true);
+        AdministrarCursos.this.dispose();
+    }//GEN-LAST:event_bcargaActionPerformed
 
     /**
      * @param args the command line arguments

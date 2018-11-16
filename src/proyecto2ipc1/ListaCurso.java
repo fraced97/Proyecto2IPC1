@@ -17,13 +17,14 @@ public class ListaCurso {
     
    
     
-    public void agregarCurso(String ncurso,String curso,String catedratico,String creditos,String laboratorio,String pre_requisito,String post_requisito){
+    public void agregarCurso(String ncurso,String curso,String catedratico,String creditos,String laboratorio,String Seccion,String pre_requisito,String post_requisito){
         NodoCurso nuevo = new NodoCurso();
         nuevo.ncurso=ncurso;
         nuevo.curso=curso;
         nuevo.catedratico=catedratico;
         nuevo.creditos=creditos;
         nuevo.laboratorio=laboratorio;
+        nuevo.seccion=Seccion;
         nuevo.pre_requisito=pre_requisito;
         nuevo.post_requisito=post_requisito;
         if(primero==null){

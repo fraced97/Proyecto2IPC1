@@ -51,6 +51,7 @@ public class MostrarCurso extends JFrame{
         tablamostrarusuario2.addColumn("Catedratico");
         tablamostrarusuario2.addColumn("Creditos");
         tablamostrarusuario2.addColumn("Laboratorio");
+        tablamostrarusuario2.addColumn("Seccion");
         tablamostrarusuario2.addColumn("Pre Requisito");
         tablamostrarusuario2.addColumn("Post Requisito");
         tablamosrarusuario.setModel(tablamostrarusuario2);
@@ -80,7 +81,7 @@ public class MostrarCurso extends JFrame{
         do {
 
             String mostrar[] = {actual.ncurso, actual.curso, actual.catedratico , actual.creditos,
-                actual.laboratorio, actual.pre_requisito, actual.post_requisito};
+                actual.laboratorio,actual.seccion, actual.pre_requisito, actual.post_requisito};
             tablamostrarusuario2.addRow(mostrar);
             actual = actual.siguiente;
         } while (actual != Proyecto2IPC1.curso.primero);

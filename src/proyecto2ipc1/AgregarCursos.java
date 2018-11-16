@@ -50,6 +50,8 @@ public class AgregarCursos extends javax.swing.JFrame {
         txtlab = new javax.swing.JTextField();
         txtpre = new javax.swing.JTextField();
         txtpost = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtseccion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +137,18 @@ public class AgregarCursos extends javax.swing.JFrame {
         jPanel1.add(txtpost);
         txtpost.setBounds(400, 210, 150, 30);
 
+        jLabel9.setText("Seccion");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(300, 270, 70, 14);
+
+        txtseccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtseccionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtseccion);
+        txtseccion.setBounds(400, 260, 150, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,11 +186,12 @@ public class AgregarCursos extends javax.swing.JFrame {
         String lab = txtlab.getText();
         String pre = txtpre.getText();
         String post = txtpost.getText();
+        String seccion=txtseccion.getText();
         
         if(codigo.length()!=0&&curso.length()!=0&&catedratico.length()!=0&&credito.length()!=0&&
                 lab.length()!=0&&pre.length()!=0&&post.length()!=0){
             if(Proyecto2IPC1.curso.CursoExiste()){
-                Proyecto2IPC1.curso.agregarCurso(codigo, curso, catedratico, credito, lab, pre, post);
+                Proyecto2IPC1.curso.agregarCurso(codigo, curso, catedratico, credito, lab,seccion, pre, post);
                 ///////Agregar un numero random para añadir contraseña al catedratico
                 
                 
@@ -185,6 +200,7 @@ public class AgregarCursos extends javax.swing.JFrame {
                 txtcatedratico.setText(null);
                 txtcredito.setText(null);
                 txtlab.setText(null);
+                txtseccion.setText(null);
                 txtpre.setText(null);
                 txtpost.setText(null);
                 
@@ -198,6 +214,10 @@ public class AgregarCursos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No ha ingresado todos los datos", "Error", 1);
         }
     }//GEN-LAST:event_bagregarActionPerformed
+
+    private void txtseccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtseccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtseccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,6 +265,7 @@ public class AgregarCursos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtcatedratico;
     public static javax.swing.JTextField txtcodigo;
@@ -253,5 +274,6 @@ public class AgregarCursos extends javax.swing.JFrame {
     private javax.swing.JTextField txtlab;
     private javax.swing.JTextField txtpost;
     private javax.swing.JTextField txtpre;
+    private javax.swing.JTextField txtseccion;
     // End of variables declaration//GEN-END:variables
 }

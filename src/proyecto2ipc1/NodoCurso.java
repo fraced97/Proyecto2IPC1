@@ -9,6 +9,7 @@ public class NodoCurso {
     String catedratico;             
     String creditos;
     String laboratorio;
+    String seccion;
     String pre_requisito;
     String post_requisito;
         

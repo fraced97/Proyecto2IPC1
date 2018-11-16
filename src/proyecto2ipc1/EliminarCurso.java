@@ -58,6 +58,8 @@ public class EliminarCurso extends javax.swing.JFrame {
         bpre = new javax.swing.JTextField();
         bpost = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        bseccion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,11 +93,11 @@ public class EliminarCurso extends javax.swing.JFrame {
 
         jLabel7.setText("Pre Requisito");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(300, 120, 80, 14);
+        jLabel7.setBounds(290, 120, 80, 14);
 
         jLabel8.setText("Post Requisito");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(300, 180, 90, 14);
+        jLabel8.setBounds(290, 180, 90, 14);
 
         bobtener.setBackground(new java.awt.Color(0, 153, 255));
         bobtener.setText("Obtener");
@@ -148,6 +150,18 @@ public class EliminarCurso extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(100, 70, 160, 30);
 
+        jLabel9.setText("Seccion");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(290, 220, 80, 30);
+
+        bseccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bseccionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bseccion);
+        bseccion.setBounds(380, 230, 140, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,6 +190,7 @@ public class EliminarCurso extends javax.swing.JFrame {
                 bcatedratico.setText(aux.catedratico);
                 bcredito.setText(aux.creditos);
                 blab.setText(aux.laboratorio);
+                bseccion.setText(aux.seccion);
                 bpre.setText(aux.pre_requisito);
                 bpost.setText(aux.post_requisito);
                 
@@ -204,7 +219,8 @@ public class EliminarCurso extends javax.swing.JFrame {
                   
                 }else{
                      Proyecto2IPC1.curso.EliminarCurso(posicion_actual.ncurso);
-                     System.out.println("Entro");
+                     JOptionPane.showMessageDialog(null, "Se ha realizado Eliminado con Exito", "Eliminar", 1);
+                     //System.out.println("Entro");
                 }
                 
             }
@@ -220,6 +236,10 @@ public class EliminarCurso extends javax.swing.JFrame {
         new AdministrarCursos().setVisible(true);
         EliminarCurso.this.dispose();
     }//GEN-LAST:event_bsalirActionPerformed
+
+    private void bseccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bseccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bseccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,6 +286,7 @@ public class EliminarCurso extends javax.swing.JFrame {
     private javax.swing.JTextField bpost;
     private javax.swing.JTextField bpre;
     private javax.swing.JButton bsalir;
+    private javax.swing.JTextField bseccion;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -275,6 +296,7 @@ public class EliminarCurso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

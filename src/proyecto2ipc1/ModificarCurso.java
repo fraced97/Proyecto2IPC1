@@ -61,6 +61,8 @@ public class ModificarCurso extends javax.swing.JFrame {
         bpost = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         bobtener = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        bseccion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,11 +96,11 @@ public class ModificarCurso extends javax.swing.JFrame {
 
         jLabel7.setText("Pre Requisito");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(290, 140, 80, 20);
+        jLabel7.setBounds(280, 140, 80, 20);
 
         jLabel8.setText("Post Requisito");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(290, 200, 80, 20);
+        jLabel8.setBounds(280, 200, 80, 20);
 
         bmodificar.setBackground(new java.awt.Color(0, 255, 0));
         bmodificar.setText("Modificar");
@@ -163,6 +165,18 @@ public class ModificarCurso extends javax.swing.JFrame {
         jPanel1.add(bobtener);
         bobtener.setBounds(40, 290, 130, 50);
 
+        jLabel9.setText("Seccion");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(300, 250, 60, 20);
+
+        bseccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bseccionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bseccion);
+        bseccion.setBounds(370, 250, 160, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -199,6 +213,7 @@ public class ModificarCurso extends javax.swing.JFrame {
                 bcatedratico.setText(aux.catedratico);
                 bcredito.setText(aux.creditos);
                 blab.setText(aux.laboratorio);
+                bseccion.setText(aux.seccion);
                 bpre.setText(aux.pre_requisito);
                 bpost.setText(aux.post_requisito);
                 
@@ -224,6 +239,7 @@ public class ModificarCurso extends javax.swing.JFrame {
                 aux.catedratico=bcatedratico.getText();
                 aux.creditos = bcredito.getText();
                 aux.laboratorio=blab.getText();
+                aux.seccion=bseccion.getText();
                 aux.pre_requisito=bpre.getText();
                 aux.post_requisito=bpost.getText();
                 
@@ -232,6 +248,10 @@ public class ModificarCurso extends javax.swing.JFrame {
             aux = aux.siguiente;
         } while (aux != Proyecto2IPC1.curso.primero);
     }//GEN-LAST:event_bmodificarActionPerformed
+
+    private void bseccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bseccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bseccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,6 +298,7 @@ public class ModificarCurso extends javax.swing.JFrame {
     private javax.swing.JTextField bpost;
     private javax.swing.JTextField bpre;
     private javax.swing.JButton bsalir;
+    private javax.swing.JTextField bseccion;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -287,6 +308,7 @@ public class ModificarCurso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
