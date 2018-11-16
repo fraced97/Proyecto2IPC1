@@ -5,12 +5,12 @@ package proyecto2ipc1;
 public class ListaDCEstudiante {
     NodoEstudiante primero;
     NodoEstudiante ultimo;
-    static int contador;
+   
     
     public ListaDCEstudiante(){
         primero = null;
         ultimo=null;
-        contador=0;
+        
     }
     
     public void IngresarEstudiante(String carnet,String dpi,String Nombre,String correo,String direccion,String credito,String contrasena){
@@ -29,7 +29,7 @@ public class ListaDCEstudiante {
             primero.siguiente=primero;
             nuevo.anterior=ultimo; 
             ultimo=nuevo;
-            contador++;
+            
             
         }else{
         ultimo.siguiente=nuevo;
@@ -37,7 +37,7 @@ public class ListaDCEstudiante {
         nuevo.anterior=ultimo;
         ultimo=nuevo;
         primero.anterior=ultimo;
-        contador++;
+        
     }
         
     }
@@ -99,4 +99,12 @@ public class ListaDCEstudiante {
         
         return condicion;
     }
+    
+    /*public boolean CargaExiste(){
+        
+        
+        
+    }*/
+    
+    
 }

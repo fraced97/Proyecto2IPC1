@@ -52,6 +52,11 @@ public class Administrador extends javax.swing.JFrame {
 
         bcursos.setBackground(new java.awt.Color(255, 153, 0));
         bcursos.setText("Administa Cursos");
+        bcursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bcursosActionPerformed(evt);
+            }
+        });
         jPanel1.add(bcursos);
         bcursos.setBounds(300, 120, 170, 50);
 
@@ -100,6 +105,12 @@ public class Administrador extends javax.swing.JFrame {
         new MenuPrincipal("Menu").setVisible(true);
         Administrador.this.dispose();
     }//GEN-LAST:event_bsalirActionPerformed
+
+    private void bcursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcursosActionPerformed
+        // TODO add your handling code here:
+        new AdministrarCursos().setVisible(true);
+        Administrador.this.dispose();
+    }//GEN-LAST:event_bcursosActionPerformed
 
     /**
      * @param args the command line arguments

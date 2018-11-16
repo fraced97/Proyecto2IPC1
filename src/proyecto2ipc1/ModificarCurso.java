@@ -6,36 +6,31 @@
 package proyecto2ipc1;
 
 import javax.swing.JOptionPane;
+import static proyecto2ipc1.ModificarEstudiante.jComboBox1;
 
 /**
  *
  * @author USUARIO
  */
-public class ModificarEstudiante extends javax.swing.JFrame {
+public class ModificarCurso extends javax.swing.JFrame {
 
     /**
-     * Creates new form ModificarEstudiante
+     * Creates new form ModificarCurso
      */
-    
-
-    public ModificarEstudiante() {
+    public ModificarCurso() {
         initComponents();
         setLocationRelativeTo(null);
         
-        //Bloquear TextField
-        bdpi.setEditable(false);
-        bcontra.setEditable(false);
         
-        //////////////////////////MOSTRAR CARNET EN COMBOBOX///////////////////////////////////////////
-        NodoEstudiante aux;
-        aux = Proyecto2IPC1.estudiante.primero;
+        //////////////////////////MOSTRAR Codigo Curso EN COMBOBOX///////////////////////////////////////////
+        NodoCurso aux;
+        aux = Proyecto2IPC1.curso.primero;
         do {
-            jComboBox1.addItem(aux.carnet);
+            jComboBox1.addItem(aux.ncurso);
             aux = aux.siguiente;
-        } while (aux != Proyecto2IPC1.estudiante.primero);
+        } while (aux != Proyecto2IPC1.curso.primero);
         
         /////////////////////////////////////////////////////////////////////
-
     }
 
     /**
@@ -52,78 +47,60 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        bdpi = new javax.swing.JTextField();
-        bnombre = new javax.swing.JTextField();
-        bdireccion = new javax.swing.JTextField();
-        bcreditos = new javax.swing.JTextField();
-        bcontra = new javax.swing.JTextField();
-        bcorreo = new javax.swing.JTextField();
         bmodificar = new javax.swing.JButton();
         bsalir = new javax.swing.JButton();
+        bcurso = new javax.swing.JTextField();
+        bcatedratico = new javax.swing.JTextField();
+        bcredito = new javax.swing.JTextField();
+        blab = new javax.swing.JTextField();
+        bpre = new javax.swing.JTextField();
+        bpost = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         bobtener = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 153));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Modificar Estudiante");
+        jLabel1.setText("Modificar Curso");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(110, 11, 350, 60);
+        jLabel1.setBounds(150, 10, 260, 60);
 
-        jLabel2.setText("Carnet");
+        jLabel2.setText("Codigo");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 90, 70, 20);
+        jLabel2.setBounds(20, 80, 50, 20);
 
-        jLabel3.setText("Dpi");
+        jLabel3.setText("Curso");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(20, 140, 60, 20);
 
-        jLabel4.setText("Nombre");
+        jLabel4.setText("Catedratico");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(20, 190, 70, 20);
 
-        jLabel6.setText("Direccion");
+        jLabel5.setText("Creditos");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(20, 250, 60, 20);
+
+        jLabel6.setText("Laboratorio");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(270, 90, 70, 20);
+        jLabel6.setBounds(290, 80, 60, 20);
 
-        jLabel7.setText("No.Creditos");
+        jLabel7.setText("Pre Requisito");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(270, 140, 80, 20);
+        jLabel7.setBounds(290, 140, 80, 20);
 
-        jLabel8.setText("Contraseña");
+        jLabel8.setText("Post Requisito");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(270, 190, 80, 20);
+        jLabel8.setBounds(290, 200, 80, 20);
 
-        jLabel9.setText("Correo");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(270, 240, 70, 20);
-        jPanel1.add(bdpi);
-        bdpi.setBounds(80, 140, 160, 30);
-        jPanel1.add(bnombre);
-        bnombre.setBounds(80, 190, 160, 30);
-        jPanel1.add(bdireccion);
-        bdireccion.setBounds(340, 90, 170, 30);
-        jPanel1.add(bcreditos);
-        bcreditos.setBounds(340, 140, 170, 30);
-        jPanel1.add(bcontra);
-        bcontra.setBounds(340, 190, 170, 30);
-
-        bcorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bcorreoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bcorreo);
-        bcorreo.setBounds(340, 240, 170, 30);
-
-        bmodificar.setBackground(new java.awt.Color(51, 255, 0));
+        bmodificar.setBackground(new java.awt.Color(0, 255, 0));
         bmodificar.setText("Modificar");
         bmodificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +108,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bmodificar);
-        bmodificar.setBounds(220, 300, 110, 50);
+        bmodificar.setBounds(210, 290, 130, 50);
 
         bsalir.setBackground(new java.awt.Color(255, 0, 0));
         bsalir.setText("Salir");
@@ -141,17 +118,42 @@ public class ModificarEstudiante extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bsalir);
-        bsalir.setBounds(390, 300, 100, 50);
+        bsalir.setBounds(380, 290, 130, 50);
+        jPanel1.add(bcurso);
+        bcurso.setBounds(80, 140, 170, 30);
+        jPanel1.add(bcatedratico);
+        bcatedratico.setBounds(90, 190, 160, 30);
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        bcredito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                bcreditoActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(80, 90, 160, 30);
+        jPanel1.add(bcredito);
+        bcredito.setBounds(80, 240, 180, 30);
+        jPanel1.add(blab);
+        blab.setBounds(360, 80, 170, 30);
 
-        bobtener.setBackground(new java.awt.Color(51, 255, 204));
+        bpre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bpreActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bpre);
+        bpre.setBounds(370, 140, 160, 30);
+
+        bpost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bpostActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bpost);
+        bpost.setBounds(370, 200, 160, 30);
+
+        jPanel1.add(jComboBox1);
+        jComboBox1.setBounds(70, 80, 180, 30);
+
+        bobtener.setBackground(new java.awt.Color(0, 204, 204));
         bobtener.setText("Obtener");
         bobtener.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,72 +161,76 @@ public class ModificarEstudiante extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bobtener);
-        bobtener.setBounds(60, 300, 110, 50);
+        bobtener.setBounds(40, 290, 130, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcorreoActionPerformed
+    private void bcreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcreditoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bcorreoActionPerformed
+    }//GEN-LAST:event_bcreditoActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void bpreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_bpreActionPerformed
+
+    private void bpostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpostActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bpostActionPerformed
 
     private void bobtenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bobtenerActionPerformed
         // TODO add your handling code here:
-        NodoEstudiante aux;
-        aux = Proyecto2IPC1.estudiante.primero;
+        NodoCurso aux;
+        aux = Proyecto2IPC1.curso.primero;
         do {
-            if(jComboBox1.getSelectedItem()==aux.carnet){
-                bdpi.setText(aux.dpi);
-                //bapellido.setText(aux.Apellido);
-                bnombre.setText(aux.Nombre);
-                bdireccion.setText(aux.direccion);
-                bcreditos.setText(aux.credito);
-                bcontra.setText(aux.contrasena);
-                bcorreo.setText(aux.correo);
+            if(jComboBox1.getSelectedItem()==aux.ncurso){
+                bcurso.setText(aux.curso);
+                bcatedratico.setText(aux.catedratico);
+                bcredito.setText(aux.creditos);
+                blab.setText(aux.laboratorio);
+                bpre.setText(aux.pre_requisito);
+                bpost.setText(aux.post_requisito);
+                
             }
             aux = aux.siguiente;
-        } while (aux != Proyecto2IPC1.estudiante.primero);
-        
+        } while (aux != Proyecto2IPC1.curso.primero);
     }//GEN-LAST:event_bobtenerActionPerformed
 
     private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsalirActionPerformed
         // TODO add your handling code here:
-        AdministrarEstudiantes administrador = new AdministrarEstudiantes();
-        administrador.setVisible(true);
-        ModificarEstudiante.this.dispose();
+        new AdministrarCursos().setVisible(true);
+        ModificarCurso.this.dispose();
     }//GEN-LAST:event_bsalirActionPerformed
 
     private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
         // TODO add your handling code here:
-        NodoEstudiante aux;
-        aux = Proyecto2IPC1.estudiante.primero;
+        NodoCurso aux;
+        aux = Proyecto2IPC1.curso.primero;
         do {
-            if(jComboBox1.getSelectedItem()==aux.carnet){
+            if(jComboBox1.getSelectedItem()==aux.ncurso){
                 //aux.Apellido=bapellido.getText();
-                aux.Nombre=bnombre.getText();
-                aux.direccion=bdireccion.getText();
-                aux.correo = bcorreo.getText();
-                aux.credito=bcreditos.getText();
+                aux.curso=bcurso.getText();
+                aux.catedratico=bcatedratico.getText();
+                aux.creditos = bcredito.getText();
+                aux.laboratorio=blab.getText();
+                aux.pre_requisito=bpre.getText();
+                aux.post_requisito=bpost.getText();
+                
                 JOptionPane.showMessageDialog(null, "Se ha realizado los Cambios con Exito", "Cambios", 1);
             }
             aux = aux.siguiente;
-        } while (aux != Proyecto2IPC1.estudiante.primero);
-        
+        } while (aux != Proyecto2IPC1.curso.primero);
     }//GEN-LAST:event_bmodificarActionPerformed
 
     /**
@@ -244,43 +250,43 @@ public class ModificarEstudiante extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModificarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModificarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModificarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModificarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarEstudiante().setVisible(true);
+                new ModificarCurso().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField bcontra;
-    private javax.swing.JTextField bcorreo;
-    private javax.swing.JTextField bcreditos;
-    private javax.swing.JTextField bdireccion;
-    private javax.swing.JTextField bdpi;
+    private javax.swing.JTextField bcatedratico;
+    private javax.swing.JTextField bcredito;
+    private javax.swing.JTextField bcurso;
+    private javax.swing.JTextField blab;
     private javax.swing.JButton bmodificar;
-    private javax.swing.JTextField bnombre;
     private javax.swing.JButton bobtener;
+    private javax.swing.JTextField bpost;
+    private javax.swing.JTextField bpre;
     private javax.swing.JButton bsalir;
-    public static javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

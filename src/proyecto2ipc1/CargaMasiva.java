@@ -151,9 +151,14 @@ public class CargaMasiva extends JFrame {
                     //datos[datos.length-1]=String.valueOf(random());
                     contra=String.valueOf(random());
                     System.out.println(datos[datos.length-1]+" "+datos.length);
-                   // datos[6]=Random;
+                   // datos[6]=Random;//esta condicion son para los espacio que hay en la linea
                    if(datos.length==6){
-                        Proyecto2IPC1.estudiante.IngresarEstudiante(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[0]+contra);
+                       //if (Proyecto2IPC1.estudiante.CDPIExiste()) {
+                           Proyecto2IPC1.estudiante.IngresarEstudiante(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[0]+contra);
+                       /*}else{
+                            JOptionPane.showMessageDialog(null, "Carnet/Dpi ya existente en una de las filas", "Error", 1);
+                       }*/
+                        
                    }
                    
 

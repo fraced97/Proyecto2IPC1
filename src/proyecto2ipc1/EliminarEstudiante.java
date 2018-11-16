@@ -24,6 +24,11 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         ///////////Bloquear TextField////////
         txtdpi.setEditable(false);
         txtcontra.setEditable(false);
+        txtnombre.setEditable(false);
+        txtcorreo.setEditable(false);
+        txtdireccion.setEditable(false);
+        txtcredito.setEditable(false);
+        
         
         
         ////////////Carnets//////////////////////////////////
@@ -58,8 +63,6 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         txtdpi = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtapellido = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -128,15 +131,9 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         jPanel1.add(txtnombre);
         txtnombre.setBounds(90, 170, 160, 30);
 
-        jLabel5.setText("Apellido");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 230, 40, 14);
-        jPanel1.add(txtapellido);
-        txtapellido.setBounds(90, 220, 160, 30);
-
         jLabel6.setText("Direccion");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(310, 80, 50, 14);
+        jLabel6.setBounds(300, 80, 70, 14);
 
         jLabel7.setText("No.Credito");
         jPanel1.add(jLabel7);
@@ -253,13 +250,7 @@ public class EliminarEstudiante extends javax.swing.JFrame {
                      posicion_actual.siguiente.anterior=anterior;
                      JOptionPane.showMessageDialog(null, "Se ha eliminado el usuario", "Eliminar", 1);
                 }
-                /*txtdpi.setText(aux.dpi);
-                txtapellido.setText(aux.Apellido);
-                txtnombre.setText(aux.Nombre);
-                txtdireccion.setText(aux.direccion);
-                txtcredito.setText(aux.credito);
-                txtcontra.setText(aux.contrasena);
-                txtcorreo.setText(aux.correo);*/
+                
             }
             anterior=posicion_actual;
             posicion_actual = posicion_actual.siguiente;
@@ -310,13 +301,11 @@ public class EliminarEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtcontra;
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtcredito;
