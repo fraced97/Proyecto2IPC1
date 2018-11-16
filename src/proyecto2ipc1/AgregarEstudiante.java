@@ -241,7 +241,7 @@ public class AgregarEstudiante extends javax.swing.JFrame {
         AdministrarEstudiantes administrador = new AdministrarEstudiantes();
         administrador.setVisible(true);
         AgregarEstudiante.this.dispose();
-        Proyecto2IPC1.estudiante.MostrarEstudiantes();
+        //Proyecto2IPC1.estudiante.MostrarEstudiantes();
     }//GEN-LAST:event_bsalirActionPerformed
 
     /**

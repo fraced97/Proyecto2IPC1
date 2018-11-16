@@ -13,12 +13,24 @@ public class ListaDCEstudiante {
         
     }
     
-    public void IngresarEstudiante(String carnet,String dpi,String Nombre,String correo,String direccion,String credito,String contrasena){
+    public boolean vacio(){
+        boolean condicion=false;
+        if(ultimo==null){
+            condicion=false;
+        }else{
+            condicion=true;
+        }
+        //return ultimo==null;
+        return condicion;
+    }
+    
+    public void IngresarEstudiante(String carnet,String dpi,String Nombre,
+            String correo,String direccion,String credito,String contrasena){
         NodoEstudiante nuevo = new NodoEstudiante();
         nuevo.carnet=carnet;
         nuevo.dpi=dpi;
         nuevo.Nombre=Nombre;
-        //nuevo.Apellido=Apellido;
+        
         nuevo.correo=correo;
         nuevo.direccion=direccion;
         nuevo.credito=credito;
