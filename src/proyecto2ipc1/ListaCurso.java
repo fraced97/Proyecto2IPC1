@@ -66,14 +66,9 @@ public class ListaCurso {
         condicion = (actual.siguiente.ncurso.equals(dato));
         if (condicion) {
             NodoCurso aux = actual.siguiente;
-            if (ultimo == ultimo.siguiente) {
-                ultimo = null;
-            } else {
-                if (aux == ultimo) {
-                    ultimo = actual;
-                }
+            
                 actual.siguiente = aux.siguiente;
-            }
+            
             aux = null;
         }
         return condicion == true;
